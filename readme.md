@@ -4,6 +4,18 @@ Lorem ipsum dolor sit amet consectetur.
 
 ## Setup repo
 
+### Branching
+
+Since this might be me alone, well please use the itemId of github project as branch when develop its task, check url address bar for it. Example itemId is 1230, well then do this:
+
+- git checkout main
+- git pull origin main
+- git checkout -b "#1230"
+- start working
+- push your change using git push origin '#1230'
+
+There are more branching strategy with pool but I don't want to talk about it right now
+
 ### Dependencies
 
 Most dependencies that needed inside this repo is available on go.mod.  
