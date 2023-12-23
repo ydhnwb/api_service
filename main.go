@@ -1,5 +1,7 @@
 package main
 
+import "github.com/ydhnwb/api_service/database"
+
 func main() {
-	println("Hello go")
+	database.SetupDatabaseConnection()
 }
