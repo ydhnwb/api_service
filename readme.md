@@ -25,6 +25,22 @@ You can install it using this command:
 go get
 ```
 
+and
+
+```
+go mod install
+```
+
+### Configure hot reload
+
+I am using AIR to make it hot reload when developing. If you are using linux, please take a look at `.air.toml` file and change some parameters there.
+
+To use it for developing, instead running it using `go run main.go`, replace it with this command:
+
+```
+air
+```
+
 ### Migration tool
 
 I am using https://github.com/golang-migrate/ package.
