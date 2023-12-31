@@ -10,5 +10,4 @@ func HealthCheck(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"message": "API is running well",
 	})
-
 }

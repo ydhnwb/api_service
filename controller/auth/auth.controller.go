@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/ydhnwb/api_service/common"
 	"github.com/ydhnwb/api_service/dto"
+	authservice "github.com/ydhnwb/api_service/service/auth_service"
 )
 
 type AuthController interface {
@@ -14,10 +15,15 @@ type AuthController interface {
 }
 
 type authControllerDependencies struct {
+	authService *authservice.AuthService
 }
 
-func NewAuthController() AuthController {
-	return &authControllerDependencies{}
+func NewAuthController(
+	authService authservice.AuthService,
+) AuthController {
+	return &authControllerDependencies{
+		authService: &authService,
+	}
 }
 
 func (auth *authControllerDependencies) Login(c *gin.Context) {
