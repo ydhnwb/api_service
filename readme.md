@@ -6,7 +6,7 @@ Lorem ipsum dolor sit amet consectetur.
 
 ### Branching
 
-Since this might be me alone, well please use the itemId of github project as branch when develop its task, check url address bar for it. Example itemId is 1230, well then do this:
+Since this might be me alone, well please use the issue ID of github project as branch when develop its task, check url address bar for it. To get `issue id` is to convert backlog to issue on project board. Example issue id is 1230, well then do this:
 
 - git checkout main
 - git pull origin main
