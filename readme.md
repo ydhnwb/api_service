@@ -85,6 +85,14 @@ migrate -database "YOU_URL_TO_DATABASE" -path migrations up
 migrate -database "YOU_URL_TO_DATABASE" -path migrations down
 ```
 
+### BuildResponseError
+
+Here is the rule of it:
+
+- if the error come from validator/v10 (gin), useErrorID is `true`
+- if it come from others / manual, useErrorID should be false
+- not all error response need to be translated, some of them are from repo/db query
+
 ## Personal target
 
 - Please and please and please don't use GORM or any other ORM :v
