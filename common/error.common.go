@@ -27,6 +27,7 @@ var tagPrefixMap = map[string]string{
 
 	//MANUAL ERROR MESSAGE
 	"auth_wrong_credentials": "Wrong credentials. Please check again your email and password",
+	"invalid_date_format":    "Date is not valid",
 }
 
 var tagPrefixMapId = map[string]string{
@@ -46,9 +47,18 @@ var tagPrefixMapId = map[string]string{
 
 	//MANUAL ERROR MESSAGE
 	"auth_wrong_credentials": "Kombinasi email dan password salah",
+	"invalid_date_format":    "Tanggal yang dimasukkan tidak valid",
 }
 
 func BuildErrorResponse(err error, useErrorID bool, args ...string) ResponseError {
+	errMsg := translateError(err, useErrorID, args...)
+	if errMsg == "" {
+		// Sometimes, it does error, but fails to build error msg.
+		// I force it to show an error as it is
+		return ResponseError{
+			Error: err.Error(),
+		}
+	}
 	return ResponseError{
 		Error: translateError(err, useErrorID, args...),
 	}
