@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/ydhnwb/api_service/common"
 	"github.com/ydhnwb/api_service/dto"
+	userservice "github.com/ydhnwb/api_service/service/user_service"
 )
 
 type UserController interface {
@@ -15,15 +16,18 @@ type UserController interface {
 }
 
 type userControllerDependencies struct {
+	userService userservice.UserService
 }
 
-func NewUserController() UserController {
-	return &userControllerDependencies{}
+func NewUserController(userService userservice.UserService) UserController {
+	return &userControllerDependencies{
+		userService: userService,
+	}
 }
 
 func (userCtl *userControllerDependencies) Register(c *gin.Context) {
 	lang := c.DefaultQuery("lang", "en")
-	var registerRequest dto.UserRegister
+	var registerRequest dto.UserRegisterRequest
 
 	err := c.ShouldBind(&registerRequest)
 	if err != nil {

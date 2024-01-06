@@ -20,6 +20,6 @@ func NewAuthService(authRepo authrepo.AuthRepository) AuthService {
 	}
 }
 
-func (auth *authServiceDependencies) Login(email string, password string) (*user.User, error) {
+func (deps *authServiceDependencies) Login(email string, password string) (*user.User, error) {
 	return nil, nil
 }
