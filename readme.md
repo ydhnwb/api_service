@@ -25,11 +25,6 @@ You can install it using this command:
 go get
 ```
 
-and
-
-```
-go mod install
-```
 
 ### Configure hot reload
 
@@ -95,7 +90,7 @@ Here is the rule of it:
 
 ## Personal target
 
-- Please and please and please don't use GORM or any other ORM :v
+- Do not use ORM. Please use raw query instead.
 - maintain the singleton of the db instance. (Leads too much database connection)
 - easy, readable error response
 - use HTTP status code as main source of truth rather than other field like 'status' etc
@@ -103,6 +98,5 @@ Here is the rule of it:
 
 ## Mandatory guide.
 
-- test coverage at least 80%
-- lorem
-- ipsum
+- all controllers / handlers must be tested
+- lorem ipsum dolor sit amet
