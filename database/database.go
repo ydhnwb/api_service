@@ -18,7 +18,7 @@ func SetupDatabaseConnection() *sql.DB {
 	}
 
 	host := os.Getenv("HOST")
-	port := os.Getenv("PORT")
+	port := os.Getenv("DB_PORT")
 	user := os.Getenv("DB_USER")
 	password := os.Getenv("DB_PASSWORD")
 	dbname := os.Getenv("DB_NAME")
